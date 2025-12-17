@@ -4,105 +4,218 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CubeCore Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #05070f;
+      --panel: #0b1020;
+      --accent: #22c55e;
+      --accent2: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: 'Press Start 2P', monospace;
+      background: radial-gradient(1200px 600px at 20% -10%, #0f172a, transparent), var(--bg);
+      color: var(--text);
     }
-    header {
-      background: linear-gradient(90deg, #22c55e, #06b6d4);
-      padding: 20px;
-      text-align: center;
+    header.hero {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #020617;
-    }
-    nav {
-      background: #020617;
-      padding: 10px;
+      padding: 100px 20px 80px;
       text-align: center;
     }
-    nav a {
-      color: #e5e7eb;
-      margin: 0 10px;
+    header.hero h1 { font-size: 2.5rem; margin: 0; }
+    header.hero p { font-size: 0.9rem; margin-top: 20px; }
+    .cta {
+      margin-top: 30px;
+      display: inline-block;
+      background: #020617;
+      color: var(--text);
+      padding: 16px 26px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      color: #22c55e;
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(2,6,23,.9);
+      padding: 14px;
+      text-align: center;
     }
+    nav a {
+      color: var(--text);
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 0.7rem;
+    }
+    nav a:hover { color: var(--accent); }
     .container {
-      max-width: 1000px;
+      max-width: 1300px;
       margin: auto;
-      padding: 20px;
+      padding: 60px 20px;
+    }
+    h2 { margin-top: 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
     .card {
-      background: #020617;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      background: var(--panel);
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: 0 15px 30px rgba(0,0,0,.4);
     }
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #1f2937, transparent);
+      margin: 80px 0;
+    }
+    .ip { color: var(--accent); user-select: all; }
     footer {
+      background: var(--panel);
       text-align: center;
-      padding: 20px;
-      background: #020617;
-      color: #9ca3af;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 0.6rem;
     }
-    .ip {
-      font-size: 1.2rem;
-      color: #22c55e;
-      user-select: all;
+    .status-dot {
+      display: inline-block;
+      width: 10px; height: 10px;
+      background: red;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 18px;
+      background: var(--accent);
+      color: #020617;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.6rem;
     }
   </style>
 </head>
 <body>
-  <header>
+  <header class="hero">
     <h1>CubeCore Network</h1>
-    <p>A Minecraft Network by Cheetahbrawl291</p>
+    <p>Custom Minecraft Network • Events • SMP • Proxies</p>
+    <a class="cta" href="#join">PLAY SOON</a>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#servers">Servers</a>
-    <a href="#status">Status</a>
-    <a href="#discord">Discord</a>
+    <a href="#about">ABOUT</a>
+    <a href="#modes">MODES</a>
+    <a href="#features">FEATURES</a>
+    <a href="#staff">STAFF</a>
+    <a href="#rules">RULES</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#roadmap">ROADMAP</a>
+    <a href="#status">STATUS</a>
+    <a href="#join">DISCORD</a>
   </nav>
 
-  <div class="container">
-    <div class="card" id="about">
+  <main class="container">
+
+    <section id="about" class="card">
       <h2>About CubeCore</h2>
-      <p>
-        CubeCore Network is a growing Minecraft network featuring custom modes,
-        events, and a friendly community. The server is currently in development
-        and not public yet.
-      </p>
-    </div>
+      <p>CubeCore Network is a next-generation Minecraft server created by Cheetahbrawl291. It focuses on fun gameplay, seasonal events, and a safe, friendly community. The server is currently under development.</p>
+    </section>
 
-    <div class="card" id="servers">
+    <div class="divider"></div>
+
+    <section id="modes">
       <h2>Game Modes</h2>
+      <div class="grid">
+        <div class="card"><h3>Custom Hub</h3><p>Interactive hub with portals, cosmetics, and secrets.</p></div>
+        <div class="card"><h3>SMP</h3><p>Survival Multiplayer with events and quality-of-life features.</p></div>
+        <div class="card"><h3>Seasonal Events</h3><p>SummerFest, Halloween, and limited-time modes.</p></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="features">
+      <h2>Features</h2>
+      <div class="grid">
+        <div class="card">Proxies & Scalability</div>
+        <div class="card">Custom Plugins</div>
+        <div class="card">Low Lag Performance</div>
+        <div class="card">Friendly Staff Team</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="staff">
+      <h2>Staff Team</h2>
+      <div class="grid">
+        <div class="card"><h3>Owner</h3><p>Cheetahbrawl291</p></div>
+        <div class="card"><h3>Admins</h3><p>TBA</p></div>
+        <div class="card"><h3>Moderators</h3><p>TBA</p></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="rules" class="card">
+      <h2>Server Rules</h2>
       <ul>
-        <li>Hub (Custom Built)</li>
-        <li>SMP</li>
-        <li>Events & Seasonal Modes</li>
+        <li>No hacking, cheating, or exploiting</li>
+        <li>Be respectful to all players</li>
+        <li>No inappropriate content</li>
+        <li>Staff decisions are final</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card" id="status">
+    <div class="divider"></div>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="grid">
+        <div class="card">Screenshot Placeholder</div>
+        <div class="card">Screenshot Placeholder</div>
+        <div class="card">Screenshot Placeholder</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="roadmap" class="card">
+      <h2>Roadmap</h2>
+      <ul>
+        <li>✔ Website</li>
+        <li>🔧 Hub & SMP Development</li>
+        <li>🎉 First Event</li>
+        <li>🌍 Public Launch</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="status" class="card">
       <h2>Server Status</h2>
-      <p>Status: <strong>Offline / Development</strong></p>
+      <p><span class="status-dot"></span> Offline / Development</p>
       <p>Java IP: <span class="ip">play.yourserver.net</span></p>
-    </div>
+    </section>
 
-    <div class="card" id="discord">
+    <div class="divider"></div>
+
+    <section id="join" class="card">
       <h2>Join the Community</h2>
-      <p>Join our Discord to get updates, sneak peeks, and announcements.</p>
-      <p><a href="#" style="color:#22c55e;">Discord Invite (add later)</a></p>
-    </div>
-  </div>
+      <p>Get updates, sneak peeks, and announcements.</p>
+      <a class="btn" href="#">JOIN DISCORD</a>
+    </section>
+
+  </main>
 
   <footer>
-    <p>© 2025 CubeCore Network. Not affiliated with Mojang or Microsoft.</p>
+    <p>© 2025 CubeCore Network • Not affiliated with Mojang or Microsoft</p>
   </footer>
 </body>
 </html>
